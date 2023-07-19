@@ -1,19 +1,19 @@
-<div class="container main">
+<div class="container my-cnt">
     <div class="row">
-        <div class="col d-flex">
-            <app-card></app-card>
+        <div class="col d-flex flex-wrap">
+            <div *ngFor="let user of users">
+                <div class="card h-100 my-card">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.name }}</h5>
+                        <p class="card-text">{{ user.status }}</p>
+                        <a routerLink="/details">Vai ai dettagli</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col d-flex">
-            <app-card></app-card>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col d-flex">
-            <app-card></app-card>
-        </div>
-    </div>
+    <router-outlet></router-outlet>
 </div>
 
 
